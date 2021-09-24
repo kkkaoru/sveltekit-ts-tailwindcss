@@ -5,5 +5,5 @@ module.exports = {
     // FIXME: Enabled when setup is complete of jest
     // 'jest --passWithNoTests --findRelatedTests',
   ],
-  '*.{js,cjs}': ['prettier -cw'],
+  '*.{js,cjs,mdx}': ['prettier -cw'],
 };
