@@ -20,5 +20,8 @@
     "url": "https://github.com/kkkaoru/sveltekit-ts-tailwindcss/issues"
   },
   "homepage": "https://github.com/kkkaoru/sveltekit-ts-tailwindcss#readme",
-  "packageManager": "yarn@3.0.0"
+  "packageManager": "yarn@3.0.0",
+  "workspaces": [
+    "app"
+  ]
 }
