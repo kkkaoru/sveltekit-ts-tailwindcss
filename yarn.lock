@@ -513,7 +513,6 @@ __metadata:
     lint-staged: ^11.1.2
     npm-run-all: ^4.1.5
     prettier: ^2.4.1
-    prettier-plugin-svelte: ^2.4.0
     svelte: ^3.42.6
     svelte-check: ^2.2.6
     svelte-preprocess: ^4.9.4
@@ -2760,16 +2759,6 @@ fsevents@~2.3.2:
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
   checksum: cd192ec0d0a8e4c6da3bb80e4f62afe336df3f76271ac6deb0e6a36187133b6073a19e9727a1ff108cd8b9982e4768850d413baa71214dd80c7979617dca827a
-  languageName: node
-  linkType: hard
-
-"prettier-plugin-svelte@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "prettier-plugin-svelte@npm:2.4.0"
-  peerDependencies:
-    prettier: ^1.16.4 || ^2.0.0
-    svelte: ^3.2.0
-  checksum: f09ce50c636f673c40429edb71735fb716f1c3bba51ce31a9650ffd2a77aca28e0726471953ed27528ba16b6b50db4571c3a7bf705d16570f645d9523813a0bf
   languageName: node
   linkType: hard
 
