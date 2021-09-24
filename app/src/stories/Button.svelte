@@ -9,7 +9,7 @@
   /**
    * What background color to use
    */
-  export let backgroundColor;
+  export let backgroundColor = undefined;
   /**
    * How large should the button be?
    */
@@ -28,7 +28,7 @@
   /**
    * Optional click handler
    */
-  function onClick(event) {
+  function onClick(event): void {
     dispatch('click', event);
   }
 </script>
