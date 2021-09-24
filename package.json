@@ -1,0 +1,24 @@
+{
+  "name": "sveltekit-ts-tailwindcss",
+  "version": "1.0.0",
+  "description": "This is boilerplate about using sveltekit with both typescript and tailwindcss",
+  "engines": {
+    "node": ">=16.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kkkaoru/sveltekit-ts-tailwindcss.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkkaoru/sveltekit-ts-tailwindcss/issues"
+  },
+  "homepage": "https://github.com/kkkaoru/sveltekit-ts-tailwindcss#readme",
+  "packageManager": "yarn@3.0.0"
+}
