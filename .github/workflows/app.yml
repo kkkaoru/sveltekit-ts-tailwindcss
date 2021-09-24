@@ -126,7 +126,7 @@ jobs:
   test:
     # FIXME: Enable jest after setup jest
     # needs: ['lint', 'formatter', 'tsc', 'jest']
-    needs: ['lint', 'formatter', 'tsc']
+    needs: ['lint', 'formatter', 'svelte-check']
     runs-on: ubuntu-20.04
     steps:
       - run: echo Done test jobs
