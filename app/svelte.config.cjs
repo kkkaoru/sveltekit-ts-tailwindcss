@@ -1,4 +1,4 @@
-import preprocess from 'svelte-preprocess';
+const preprocess = require('svelte-preprocess');
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -12,4 +12,4 @@ const config = {
   },
 };
 
-export default config;
+module.exports = config;

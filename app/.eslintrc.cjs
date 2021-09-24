@@ -12,7 +12,6 @@ module.exports = {
     ecmaVersion: 2019,
   },
   plugins: ['svelte3'],
-  overrides: [{ files: ['*.svelte'], processor: 'svelte3/svelte3' }],
   settings: {
     'svelte3/typescript': require('typescript'),
   },
@@ -29,4 +28,20 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['*.svelte'],
+      processor: 'svelte3/svelte3',
+      rules: {
+        'import/no-mutable-exports': 'off',
+      },
+    },
+    {
+      files: ['*.stories.svelte'],
+      processor: 'svelte3/svelte3',
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+  ],
 };
