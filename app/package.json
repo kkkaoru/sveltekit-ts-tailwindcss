@@ -7,8 +7,9 @@
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
+    "prettier": "prettier --ignore-path .gitignore --check --write --plugin-search-dir=. .",
+    "eslint": "eslint --ignore-path .gitignore --max-warnings=0 --fix --resolve-plugins-relative-to .",
+    "lint": "npm-run-all eslint prettier",
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
@@ -22,6 +23,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
     "lint-staged": "^11.1.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
     "svelte": "^3.42.6",
