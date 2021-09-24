@@ -25,6 +25,8 @@
     "app"
   ],
   "devDependencies": {
+    "@types/prettier": "^2.3.2",
+    "prettier": "^2.4.1",
     "typesync": "^0.8.0"
   }
 }
