@@ -9,7 +9,7 @@
   /**
    * What background color to use
    */
-  export let backgroundColor = undefined;
+  export let backgroundColor;
   /**
    * How large should the button be?
    */
