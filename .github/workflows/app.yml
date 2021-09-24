@@ -29,7 +29,7 @@ jobs:
             yarn-
       - name: 'Check or update Yarn cache (fix w/ "yarn install")'
         run: |
-          yarn install --immutable --skip-builds
+          yarn install --immutable
   lint:
     name: Lint
     needs: prepare-yarn-cache
