@@ -12,6 +12,8 @@
   },
   "devDependencies": {
     "@sveltejs/kit": "next",
+    "@types/eslint": "^7.28.0",
+    "@types/prettier": "^2.3.2",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
     "eslint": "^7.32.0",

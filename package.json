@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "typesync || :"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
   "packageManager": "yarn@3.0.0",
   "workspaces": [
     "app"
-  ]
+  ],
+  "devDependencies": {
+    "typesync": "^0.8.0"
+  }
 }
