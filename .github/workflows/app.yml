@@ -1,0 +1,132 @@
+name: App jobs
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/app.yml'
+      - 'app/**'
+jobs:
+  prepare-yarn-cache:
+    name: Prepare Cache
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.9.1'
+          cache: 'yarn'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            yarn-
+      - name: 'Check or update Yarn cache (fix w/ "yarn install")'
+        run: |
+          yarn install --immutable
+  lint:
+    name: Lint
+    needs: prepare-yarn-cache
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.9.1'
+          cache: 'yarn'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('yarn.lock') }}
+      - name: Install
+        run: yarn install
+      - name: ESLint
+        run: yarn workspace app eslint
+  formatter:
+    name: Formatter
+    needs: prepare-yarn-cache
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.9.1'
+          cache: 'yarn'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('yarn.lock') }}
+      - name: Install
+        run: yarn install
+      - name: Prettier
+        run: yarn workspace app prettier
+  svelte-check:
+    name: Svelte check
+    needs: prepare-yarn-cache
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.9.1'
+          cache: 'yarn'
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: yarn-${{ hashFiles('yarn.lock') }}
+      - name: Install
+        run: yarn install
+      - name: Compile
+        run: yarn workspace app check
+  # FIXME: Enable jest after setup jest
+  # jest:
+  #   name: Jest
+  #   needs: prepare-yarn-cache
+  #   runs-on: ubuntu-20.04
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v2
+  #     - name: Use Node.js
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: '16.9.1'
+  #         cache: 'yarn'
+  #     - name: Get yarn cache directory path
+  #       id: yarn-cache-dir-path
+  #       run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+  #     - uses: actions/cache@v2
+  #       with:
+  #         path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+  #         key: yarn-${{ hashFiles('yarn.lock') }}
+  #     - name: Install
+  #       run: yarn install
+  #     - name: Jest
+  #       run: yarn workspace app test
+  test:
+    # FIXME: Enable jest after setup jest
+    # needs: ['lint', 'formatter', 'tsc', 'jest']
+    needs: ['lint', 'formatter', 'svelte-check']
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo Done test jobs
