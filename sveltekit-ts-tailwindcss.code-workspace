@@ -1,11 +1,25 @@
 {
-"folders": [
-  {
-    "path": "."
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "app"
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "svelte.svelte-vscode",
+      "bradlc.vscode-tailwindcss"
+    ]
   },
-  {
-    "path": "app"
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "editor.codeActionsOnSave": ["source.fixAll.eslint"]
   }
-],
-"settings": {}
 }
