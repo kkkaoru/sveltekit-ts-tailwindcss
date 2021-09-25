@@ -3212,6 +3212,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@testing-library/dom@npm:^7.0.3":
+  version: 7.31.2
+  resolution: "@testing-library/dom@npm:7.31.2"
+  dependencies:
+    "@babel/code-frame": ^7.10.4
+    "@babel/runtime": ^7.12.5
+    "@types/aria-query": ^4.2.0
+    aria-query: ^4.2.2
+    chalk: ^4.1.0
+    dom-accessibility-api: ^0.5.6
+    lz-string: ^1.4.4
+    pretty-format: ^26.6.2
+  checksum: 54fbedd1ecdfe1d47be2e592b98d18b2ab9d7e731f57231caf9b152593fe7329fe5ebe219e0e5d1e0df5b1ab803121cb8acd8b73bd1fb292bfdc2c55663eb01d
+  languageName: node
+  linkType: hard
+
 "@testing-library/jest-dom@npm:^5.14.1":
   version: 5.14.1
   resolution: "@testing-library/jest-dom@npm:5.14.1"
@@ -3229,6 +3245,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@testing-library/svelte@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "@testing-library/svelte@npm:3.0.3"
+  dependencies:
+    "@testing-library/dom": ^7.0.3
+  peerDependencies:
+    svelte: 3.x
+  checksum: 8cd2fd443aa78e5c2ea7594b08f8aacea556092db3feacd8e0cc9b2618320b7be75564458e276e3583ff87d88db53c406d3a44e57e475d982c7ea8d6643d67f1
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:1":
   version: 1.1.2
   resolution: "@tootallnate/once@npm:1.1.2"
@@ -3240,6 +3267,13 @@ __metadata:
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
   checksum: 11226c39b52b391719a2a92e10183e4260d9651f86edced166da1d95f39a0a1eaa470e44d14ac685ccd6d3df7e2002433782872c0feeb260d61e80f21250e65c
+  languageName: node
+  linkType: hard
+
+"@types/aria-query@npm:^4.2.0":
+  version: 4.2.2
+  resolution: "@types/aria-query@npm:4.2.2"
+  checksum: 6f2ce11d91e2d665f3873258db19da752d91d85d3679eb5efcdf9c711d14492287e1e4eb52613b28e60375841a9e428594e745b68436c963d8bad4bf72188df3
   languageName: node
   linkType: hard
 
@@ -3735,7 +3769,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/experimental-utils@npm:4.31.2":
+"@typescript-eslint/experimental-utils@npm:4.31.2, @typescript-eslint/experimental-utils@npm:^4.0.1":
   version: 4.31.2
   resolution: "@typescript-eslint/experimental-utils@npm:4.31.2"
   dependencies:
@@ -4366,6 +4400,7 @@ __metadata:
     "@storybook/svelte": ^6.3.8
     "@sveltejs/kit": next
     "@testing-library/jest-dom": ^5.14.1
+    "@testing-library/svelte": ^3.0.3
     "@types/eslint": ^7.28.0
     "@types/prettier": ^2.3.2
     "@typescript-eslint/eslint-plugin": ^4.31.1
@@ -4379,6 +4414,7 @@ __metadata:
     eslint-config-airbnb-base: ^14.2.1
     eslint-config-prettier: ^8.3.0
     eslint-plugin-import: ^2.24.2
+    eslint-plugin-jest: ^24.4.2
     eslint-plugin-svelte3: ^3.2.1
     jest: ^27.2.2
     lint-staged: ^11.1.2
@@ -7539,6 +7575,21 @@ __metadata:
   peerDependencies:
     eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0
   checksum: df570aec83ffa126fd80596d9fb1b6799d3cde025ceeb159eb28383541ebbb855468c9a2dbc670ab9e91dd0a8f8a82e52fd909a7c61e9ffa585bcce84ae1aec4
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-jest@npm:^24.4.2":
+  version: 24.4.2
+  resolution: "eslint-plugin-jest@npm:24.4.2"
+  dependencies:
+    "@typescript-eslint/experimental-utils": ^4.0.1
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ">= 4"
+    eslint: ">=5"
+  peerDependenciesMeta:
+    "@typescript-eslint/eslint-plugin":
+      optional: true
+  checksum: de00fa7464860a189841cf767eda6607ec53e8b839d2317f80561751580c3976a04af509f1b771808b56e88316ffc31309b9e58aeac7ac55ffdea8ed3f4626f1
   languageName: node
   linkType: hard
 
@@ -11304,6 +11355,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"lz-string@npm:^1.4.4":
+  version: 1.4.4
+  resolution: "lz-string@npm:1.4.4"
+  bin:
+    lz-string: bin/bin.js
+  checksum: 54e31238a61a84d8f664d9860a9fba7310c5b97a52c444f80543069bc084815eff40b8d4474ae1d93992fdf6c252dca37cf27f6adbeb4dbc3df2f3ac773d0e61
+  languageName: node
+  linkType: hard
+
 "magic-string@npm:^0.25.7":
   version: 0.25.7
   resolution: "magic-string@npm:0.25.7"
@@ -13448,6 +13508,18 @@ fsevents@^1.2.7:
     lodash: ^4.17.20
     renderkid: ^2.0.4
   checksum: 16775d06f9a695d17103414d610b1281f9535ee1f2da1ce1e1b9be79584a114aa7eac6dcdcc5ef151756d3c014dfd4ac1c7303ed8016d0cec12437cfdf4021c6
+  languageName: node
+  linkType: hard
+
+"pretty-format@npm:^26.6.2":
+  version: 26.6.2
+  resolution: "pretty-format@npm:26.6.2"
+  dependencies:
+    "@jest/types": ^26.6.2
+    ansi-regex: ^5.0.0
+    ansi-styles: ^4.0.0
+    react-is: ^17.0.1
+  checksum: e3b808404d7e1519f0df1aa1f25cee0054ab475775c6b2b8c5568ff23194a92d54bf93274139b6f584ca70fd773be4eaa754b0e03f12bb0a8d1426b07f079976
   languageName: node
   linkType: hard
 
