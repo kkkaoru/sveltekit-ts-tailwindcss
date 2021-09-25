@@ -13,4 +13,7 @@ module.exports = {
     ],
   },
   snapshotResolver: './jest/snapshot-resolver.cjs',
+  moduleNameMapper: {
+    '@/(.*)$': '<rootDir>/src/$1',
+  },
 };
