@@ -1,11 +1,18 @@
 /** @type import('eslint').Linter.BaseConfig */
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'eslint-config-airbnb-base', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'eslint-config-airbnb-base',
+    'plugin:jest/recommended',
+    'prettier',
+  ],
   ignorePatterns: ['*.cjs', '*.js'],
   env: {
     browser: true,
     es2017: true,
     node: true,
+    'jest/globals': true,
   },
   parserOptions: {
     sourceType: 'module',
@@ -39,6 +46,12 @@ module.exports = {
     {
       files: ['*.stories.svelte'],
       processor: 'svelte3/svelte3',
+      rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      files: ['*.test.ts'],
       rules: {
         'import/no-extraneous-dependencies': 'off',
       },

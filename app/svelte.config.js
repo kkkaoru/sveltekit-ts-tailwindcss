@@ -1,6 +1,4 @@
-import module from 'module';
-const require = module.createRequire(import.meta.url);
-const preprocess = require('./svelte-config/preprocess.cjs');
+import preprocess from './svelte-config/preprocess.mjs';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
