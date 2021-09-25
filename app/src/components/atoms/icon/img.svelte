@@ -8,4 +8,4 @@
   export let decoding: ImgDecodingType = 'async';
   export let loading: ImgLoadingType = 'lazy';
 </script>
-<img src={src} alt={alt} decoding={decoding} loading={loading}  width={width} height={height} />
+<img src={src} alt={alt} decoding={decoding} loading={loading}  width={width} height={height} class="w-32"/>
