@@ -12,4 +12,5 @@ module.exports = {
       },
     ],
   },
+  snapshotResolver: './jest/snapshot-resolver.cjs',
 };
