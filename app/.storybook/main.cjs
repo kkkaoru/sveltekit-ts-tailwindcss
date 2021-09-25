@@ -1,3 +1,5 @@
+const preprocessor = require('../svelte-config/preprocess.cjs');
+
 /** @type import('@storybook/core-common').StorybookConfig */
 module.exports = {
   // Ignore example-stories. if you want to include them, just add the directory into stories
@@ -7,6 +9,6 @@ module.exports = {
     builder: 'storybook-builder-vite',
   },
   svelteOptions: {
-    preprocess: require('../svelte.config.cjs').preprocess,
+    preprocess: preprocessor,
   },
 };
