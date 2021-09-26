@@ -1,7 +1,7 @@
 <script lang='ts'>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
   import TopTemplate from './index.svelte';
-  import { mockIconProps, mockTopTitle } from '../../../mocks/templates/top';
+  import { mockIconProps, mockTopTitle } from '@/mocks/templates/top';
 </script>
 
 <Meta

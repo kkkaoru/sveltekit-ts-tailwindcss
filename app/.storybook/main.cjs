@@ -11,4 +11,17 @@ module.exports = {
   svelteOptions: {
     preprocess: preprocessor,
   },
+  /**
+   * @param {import('vite').ResolvedConfig} config
+   * @returns {import('vite').ResolvedConfig}
+   */
+  async viteFinal(config) {
+    config.resolve.alias = [
+      {
+        find: '@/',
+        replacement: `${__dirname}/../src/`,
+      },
+    ];
+    return config;
+  },
 };
