@@ -1,5 +1,5 @@
 import { render } from '@testing-library/svelte';
-import { mockEmojiThumbsUpSvgUrl } from '../../../mocks/emoji/thumbs-up';
+import { mockEmojiThumbsUpSvgUrl } from '@/mocks/emoji/thumbs-up';
 import Icon from './img.svelte';
 
 describe('shows proper heading when rendered', () => {

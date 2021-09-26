@@ -32,6 +32,7 @@ module.exports = {
       'error',
       {
         ts: 'off',
+        svelte: 'off',
       },
     ],
   },

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Icon from '../../atoms/icon/img.svelte';
+  import Icon from '@/components/atoms/icon/img.svelte';
 
   export let icon;
   export let title;

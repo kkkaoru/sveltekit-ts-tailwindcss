@@ -1,7 +1,7 @@
 <script lang='ts'>
   import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
   import Icon from './img.svelte';
-  import { mockEmojiThumbsUpSvgUrl } from '../../../mocks/emoji/thumbs-up';
+  import { mockEmojiThumbsUpSvgUrl } from '@/mocks/emoji/thumbs-up';
 </script>
 
 <Meta
